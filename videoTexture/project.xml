@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<define name="AIR_SDK" value="${AIR_SDK}"></define>
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="Video" package="fuse.sample.video.Video" version="1.0.0" company="P.J.Shand" />
+	
+	<!-- output -->
+	<app main="Main" file="Video" path="bin" />
+	<app swf-version="28" />
+
+	<window background="#000000" fps="60" />
+	<window width="640" height="480" unless="mobile" />
+	<window width="0" height="0" if="html5" />
+	<window orientation="landscape" vsync="false" antialiasing="0" if="cpp" />
+	
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="openfl" />
+	
+	<!-- assets -->
+	<assets path="assets/videos" rename="videos" embed="false" />
+	<haxeflag name="-D advanced-telemetry"></haxeflag>
+	<haxeflag name="-D source-map-content"></haxeflag>
+	
+	
+
+	<!-- optimize output
+	<haxeflag name="-dce full" /> -->
+	
+</project>
